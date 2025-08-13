@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* GS KIGEME A Design System - All colors, gradients, fonts, etc defined here */
+
+@layer base {
+  :root {
+    /* Kigeme Brand Colors */
+    --kigeme-green: 150 47% 31%; /* #2F6F4E */
+    --kigeme-green-light: 150 47% 41%;
+    --kigeme-green-dark: 150 47% 21%;
+    --kigeme-orange: 32 95% 47%; /* #F18F01 */
+    --kigeme-orange-light: 32 95% 57%;
+    --kigeme-orange-dark: 32 95% 37%;
+    
+    /* System Colors */
+    --background: 0 0% 100%;
+    --foreground: 150 47% 21%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 150 47% 21%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 47% 21%;
+    
+    --primary: 150 47% 31%; /* Kigeme Green */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 32 95% 47%; /* Kigeme Orange */
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 150 20% 96%;
+    --muted-foreground: 150 10% 45%;
+    
+    --accent: 32 95% 95%;
+    --accent-foreground: 32 95% 37%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 150 20% 90%;
+    --input: 150 20% 95%;
+    --ring: 150 47% 31%;
+    
+    --radius: 0.75rem;
+    
+    /* Kigeme Specific Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--kigeme-green)), hsl(var(--kigeme-green-dark)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--kigeme-orange)), hsl(var(--kigeme-orange-light)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -2px hsl(var(--kigeme-green) / 0.1);
+    --shadow-medium: 0 8px 30px -4px hsl(var(--kigeme-green) / 0.15);
+    --shadow-strong: 0 12px 40px -8px hsl(var(--kigeme-green) / 0.2);
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--kigeme-green) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--kigeme-green-light) / 0.4);
+    --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Glass morphism */
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.18);
+    --glass-backdrop: blur(10px);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Glass morphism dark mode */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--kigeme-green) / 0.1);
+    --shadow-glow: 0 0 40px hsl(var(--kigeme-green-light) / 0.2);
+    --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+    --glass-bg: rgba(0, 0, 0, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-backdrop: blur(10px);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  /* Kigeme Button Variants */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-[hsl(var(--kigeme-green-dark))] 
+           shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-medium)] 
+           transition-[var(--transition-smooth)] font-medium rounded-[var(--radius)]
+           px-6 py-3 transform hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-[hsl(var(--kigeme-orange-dark))]
+           shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-medium)]
+           transition-[var(--transition-smooth)] font-medium rounded-[var(--radius)]
+           px-6 py-3 transform hover:scale-105;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground
+           transition-[var(--transition-smooth)] font-medium rounded-[var(--radius)]
+           px-6 py-3 transform hover:scale-105;
+  }
+  
+  /* Hero Gradient Background */
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+  
+  /* Card Styles */
+  .card-elevated {
+    @apply bg-card rounded-[var(--radius)] shadow-[var(--shadow-soft)] 
+           hover:shadow-[var(--shadow-medium)] transition-[var(--transition-smooth)]
+           border border-border;
+  }
+  
+  /* Text Animations */
+  .text-animate {
+    @apply transition-[var(--transition-smooth)] hover:text-secondary;
+  }
+  
+  /* Image Hover Effects */
+  .image-hover {
+    @apply transition-transform duration-300 hover:scale-110 overflow-hidden rounded-[var(--radius)];
+  }
+  
+  /* Glass morphism effects */
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-backdrop);
+    -webkit-backdrop-filter: var(--glass-backdrop);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: var(--shadow-glass);
+  }
+
+  /* Hover effects */
+  .hover-scale {
+    transition: transform 0.2s ease;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  /* Fade In Animation */
+  .fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  .slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes countUp {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes parallax {
+  to {
+    transform: translateY(-20px);
+  }
+}
